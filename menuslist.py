@@ -2,14 +2,7 @@
 
 import requests, json
 
-#pvm = []
-#mealslist = []
-# Ravintola Maru
-# Ravintola Foodoo / Oikea Foodoo Reilu
 
-
-mara_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/49?lang=fi"
-foodooreilu_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/48?lang=fi"
 class menusList:
     def __init__(self, url, name):
         self.url = url
@@ -54,7 +47,7 @@ class menusList:
             pvm.append(date['date'])
 
         keyId = self.getkeyID(wjdata)
-        print(keyId)
+        #print(keyId)
         #check_for_correct_key = wjdata[0]['menuTypes'][5]['menuTypeName']
         for x in range(0,5):
             for i in range(0,4):
@@ -75,28 +68,5 @@ class menusList:
             x += 1
         return thisdict
 
-mara = menusList(mara_url, 'Ravintola Mara')
-pvm = mara.getjsondays()
-#print(pvm)
-
-mara_dictionary = mara.getjsonmenus()
-
-print(mara_dictionary['Maanantai'])
-print(mara_dictionary['Tiistai'])
-print(mara_dictionary['Keskiviikko'])
-print(mara_dictionary['Torstai'])
-print(mara_dictionary['Perjantai'])
-
-foodoo_reilu = menusList(foodooreilu_url, 'Foodoo Reilu')
-foodooreilu_dictionary = foodoo_reilu.getjsonmenus()
-
-print(foodooreilu_dictionary['Maanantai'])
-print(foodooreilu_dictionary['Tiistai'])
-print(foodooreilu_dictionary['Keskiviikko'])
-print(foodooreilu_dictionary['Torstai'])
-print(foodooreilu_dictionary['Perjantai'])
-
-
-# 4, 6, 9, 9, 9 
-
-
+if __name__ == '__main__':
+    main()
