@@ -83,6 +83,24 @@ if(check_for_mara_again == 'Ravintola Mara'):
         mealslist.clear()
         x += 1
 
+#for i in range(0,10):
+#    check_for_mara_again = wjdata[0]['menuTypes'][i]['menuTypeName']
+#    if(check_for_mara_again == 'Ravintola Mara'):
+#        x = 1
+#        return x
+# if check_for_correct_key == self.name)
+
+def hae():
+    for i in range(0,10):
+        check_for_mara_again = wjdata[0]['menuTypes'][i]['menuTypeName']
+        print(check_for_mara_again, i)
+        if(check_for_mara_again == 'Ravintola Mara'):
+            x = i
+            return x
+
+asd = hae()
+print("HAE FUNKTION ARVOO !! :", asd)
+
 print('Ravintola Mara ruokalista', pvm[0] , '-', pvm[4])
 maanantai_lista = thisdict['Maanantai']
 tiistai_lista = thisdict['Tiistai']
