@@ -4,7 +4,7 @@
     Ärsytti hakea ravintolan lista monen linkin takaa netistä
     niin kehitin tällaisen tavan
 """
-
+# ei käytössä
 import requests, json
 # Ravintola mara https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/49?lang=fi
 # my_json['value']['queryInfo']['creationTime'] # 1349724919000
