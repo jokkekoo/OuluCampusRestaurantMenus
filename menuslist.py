@@ -49,12 +49,7 @@ class menusList:
 
         wjdata = requests.get(self.url).json()
 
-        #for date in wjdata[0]['menuTypes'][5]['menus'][0]['days']:
-        #    pvm.append(date['date'])
-
         keyId = self.getkeyID(wjdata)
-        #print(keyId)
-        #check_for_correct_key = wjdata[0]['menuTypes'][5]['menuTypeName'] 
         for x in range(0,5):
             for i in range(0,4):
                 for meals in wjdata[0]['menuTypes'][keyId]['menus'][0]['days'][x]['mealoptions'][i]['menuItems']:
