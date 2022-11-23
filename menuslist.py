@@ -16,10 +16,10 @@ class menusList:
         pvm = [str(x) for x in pvm]
         for i, date in enumerate(pvm):
             pvm[i] = datetime.strptime(date, '%Y%m%d').strftime('%d.%m.%Y')
-            asd = pvm[i]
-            asd = datetime.strptime(asd, '%d.%m.%Y')
-            asd = asd.strftime("%a")
-            pvm[i] = asd + ' ' + pvm[i]
+            day = pvm[i]
+            day = datetime.strptime(day, '%d.%m.%Y')
+            day = day.strftime("%a")
+            pvm[i] = day + ' ' + pvm[i]
         return pvm
 
     def add_values_in_dict(self, sample_dict, key, list_of_values):
