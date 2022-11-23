@@ -10,11 +10,23 @@ Tällä hetkellä toimii vain Mara ja Foodoo. Ideana lisätä vielä Foodoo Gard
 
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
+A quick introduction of the setup you need to get this project up &
 running.
 
 ```shell
-commands here
+$ git clone https://github.com/jokkekoo/OuluCampusRestaurantMenus
+
+```
+# if you want to install all requirements globally 
+```shell
+$ pip install -r requirements.txt
+```
+# recommended : make virtualenv
+```shell
+$ cd OuluCampusRestaurantMenus
+$ python3 -m venv venv
+$ source venv/bin/source
+$ pip install -r requirements.txt
 ```
 
 Here you should say what actually happens when you execute the code above.
