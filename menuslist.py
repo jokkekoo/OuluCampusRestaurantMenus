@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import requests, json
-
+from datetime import datetime
 
 class menusList:
     def __init__(self, url, name):
@@ -13,6 +13,13 @@ class menusList:
         wjdata = requests.get(self.url).json()
         for date in wjdata[0]['menuTypes'][5]['menus'][0]['days']:
             pvm.append(date['date'])
+        pvm = [str(x) for x in pvm]
+        for i, date in enumerate(pvm):
+            pvm[i] = datetime.strptime(date, '%Y%m%d').strftime('%d.%m.%Y')
+            asd = pvm[i]
+            asd = datetime.strptime(asd, '%d.%m.%Y')
+            asd = asd.strftime("%a")
+            pvm[i] = asd + ' ' + pvm[i]
         return pvm
 
     def add_values_in_dict(self, sample_dict, key, list_of_values):
@@ -38,17 +45,16 @@ class menusList:
                     'Torstai':[],
                     'Perjantai':[]
                     }
-        pvm = []
         mealslist = []
 
         wjdata = requests.get(self.url).json()
 
-        for date in wjdata[0]['menuTypes'][5]['menus'][0]['days']:
-            pvm.append(date['date'])
+        #for date in wjdata[0]['menuTypes'][5]['menus'][0]['days']:
+        #    pvm.append(date['date'])
 
         keyId = self.getkeyID(wjdata)
         #print(keyId)
-        #check_for_correct_key = wjdata[0]['menuTypes'][5]['menuTypeName']
+        #check_for_correct_key = wjdata[0]['menuTypes'][5]['menuTypeName'] 
         for x in range(0,5):
             for i in range(0,4):
                 for meals in wjdata[0]['menuTypes'][keyId]['menus'][0]['days'][x]['mealoptions'][i]['menuItems']:
