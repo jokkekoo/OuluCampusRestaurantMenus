@@ -27,7 +27,7 @@ Recommended : make virtualenv
 ```shell
 cd OuluCampusRestaurantMenus
 python3 -m venv venv
-source venv/bin/source
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 Test it out 
