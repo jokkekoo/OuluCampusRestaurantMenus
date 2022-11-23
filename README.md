@@ -13,6 +13,8 @@ Tällä hetkellä toimii vain Mara ja Foodoo. Ideana lisätä vielä Foodoo Gard
 A quick introduction of the setup you need to get this project up &
 running.
 
+On Linux:
+
 ```shell
 git clone https://github.com/jokkekoo/OuluCampusRestaurantMenus
 
