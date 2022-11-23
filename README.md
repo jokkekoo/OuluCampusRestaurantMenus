@@ -35,3 +35,7 @@ It needs restaurants name as argument
 ```shell
 python3 main.py foodoo
 ```
+or
+```shell
+python3 main.py mara
+```
