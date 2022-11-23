@@ -17,11 +17,11 @@ running.
 $ git clone https://github.com/jokkekoo/OuluCampusRestaurantMenus
 
 ```
-# if you want to install all requirements globally 
+if you want to install all requirements globally 
 ```shell
 $ pip install -r requirements.txt
 ```
-# recommended : make virtualenv
+recommended : make virtualenv
 ```shell
 $ cd OuluCampusRestaurantMenus
 $ python3 -m venv venv
