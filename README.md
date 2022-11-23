@@ -30,7 +30,8 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-Test it out 
+Test it out
+
 It needs restaurants name as argument
 ```shell
 python3 main.py foodoo
