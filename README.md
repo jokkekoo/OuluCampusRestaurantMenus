@@ -14,22 +14,22 @@ A quick introduction of the setup you need to get this project up &
 running.
 
 ```shell
-$ git clone https://github.com/jokkekoo/OuluCampusRestaurantMenus
+git clone https://github.com/jokkekoo/OuluCampusRestaurantMenus
 
 ```
 If you want to install all requirements globally 
 ```shell
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 Recommended : make virtualenv
 ```shell
-$ cd OuluCampusRestaurantMenus
-$ python3 -m venv venv
-$ source venv/bin/source
-$ pip install -r requirements.txt
+cd OuluCampusRestaurantMenus
+python3 -m venv venv
+source venv/bin/source
+pip install -r requirements.txt
 ```
 Test it out 
 It needs restaurants name as argument
 ```shell
-$ python3 main.py foodoo
+python3 main.py foodoo
 ```
