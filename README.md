@@ -4,6 +4,7 @@ Small python project for getting OAMK school restaurants menus.
 It's currently only showing Mara and Foodoo menus, I'm working on adding Foodoo Garden and in the future Oulu University student restaurants.
 
 > Finnish
+
 Pieni python projekti minkä tarkoituksena näyttää opiskelijaravintoloiden ruokalistat.
 Tällä hetkellä toimii vain Mara ja Foodoo. Ideana lisätä vielä Foodoo Garden ja tulevaisuudessa ehkä yliopiston opiskelijaravintoloita
 
