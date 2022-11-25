@@ -1,7 +1,7 @@
 # OuluCampusRestaurantMenus &middot; ![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
 
-WIP Small python project for getting OAMK student restaurants menus.
-It's currently showing Mara and Foodoo / Foodoo Garden menus, I'm working on adding in the future Oulu University student restaurants.
+WIP Small python project for getting OAMK student restaurants menus. English menus coming soon.
+It's currently showing Mara and Foodoo / Foodoo Garden menus, I'm working on adding in the future Oulu University student restaurants menus.
 
 > Finnish
 
