@@ -21,6 +21,7 @@ git clone https://github.com/jokkekoo/OuluCampusRestaurantMenus
 ```
 If you want to install all requirements globally 
 ```shell
+cd OuluCampusRestaurantMenus
 pip install -r requirements.txt
 ```
 Recommended : make virtualenv
