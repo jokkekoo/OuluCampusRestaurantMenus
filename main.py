@@ -1,26 +1,22 @@
 from menuslist import menusList
 import argparse
 from treelib import Node, Tree
-# Ravintola Mara
-# Ravintola Foodoo / Oikea Foodoo Reilu
 
-# API joskus jättää viikosta esim maanantain pois
 # Argument parseriin -h niin näyttää vaihtoehdot ravintoloiden nimille
 # -h mara, foodoo, garden
 
-# API joskus jättää viikosta esim maanantain pois
 # Printtaus vierekkäin Foodoo | Mara | Garden
 #                             |      |  
 #                             |      | 
 #                             |      |
 
-
-def treeprint(pvm, x, rname):
+def treeprint(pvm, dictionary, rname):
     tree = Tree()
-    tree.create_node(rname, "ravintola")
-    tree.create_node(pvm, "paapaiva", parent="ravintola")  # root node
-    for i, data in enumerate(x):
-        tree.create_node(x[i], "ruoka" + str(i), parent="paapaiva")
+    tree.create_node(rname, "ravintola") # root node
+    for index, (key, value) in enumerate(dictionary.items()):
+        tree.create_node(pvm[index], "paiva" + str(index), parent="ravintola")
+        for x in range(len(value)):
+            tree.create_node(value[x], "ruoka" + pvm[index] + str(x), parent="paiva"+str(index))
     tree.show()
 
 def printOneMenu(rname, url):
@@ -33,11 +29,7 @@ def printOneMenu(rname, url):
     obj = menusList(url, rname)
     pvm = obj.getjsondays()
     obj_dict = obj.getjsonmenus()
-    treeprint(pvm[0], obj_dict['Maanantai'], rname)
-    treeprint(pvm[1], obj_dict['Tiistai'], rname)
-    treeprint(pvm[2], obj_dict['Keskiviikko'], rname)
-    treeprint(pvm[3], obj_dict['Torstai'], rname)
-    treeprint(pvm[4], obj_dict['Perjantai'], rname)
+    treeprint(pvm, obj_dict, rname)
 
 def printAllMenus(lang):
     obj_mara = menusList("https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/49?lang=" + lang, 'Ravintola Mara')
@@ -52,24 +44,9 @@ def printAllMenus(lang):
     obj_foodoo_dict = obj_foodoo.getjsonmenus()
     obj_garden_dict = obj_garden.getjsonmenus()
 
-    treeprint(pvm_mara[0], obj_mara_dict['Maanantai']  , 'Ravintola Mara')
-    treeprint(pvm_mara[1], obj_mara_dict['Tiistai']    , 'Ravintola Mara')
-    treeprint(pvm_mara[2], obj_mara_dict['Keskiviikko'], 'Ravintola Mara')
-    treeprint(pvm_mara[3], obj_mara_dict['Torstai']    , 'Ravintola Mara')
-    treeprint(pvm_mara[4], obj_mara_dict['Perjantai']  , 'Ravintola Mara')
-
-    treeprint(pvm_foodoo[0], obj_foodoo_dict['Maanantai']  , 'Foodoo Reilu')
-    treeprint(pvm_foodoo[1], obj_foodoo_dict['Tiistai']    , 'Foodoo Reilu')
-    treeprint(pvm_foodoo[2], obj_foodoo_dict['Keskiviikko'], 'Foodoo Reilu')
-    treeprint(pvm_foodoo[3], obj_foodoo_dict['Torstai']    , 'Foodoo Reilu')
-    treeprint(pvm_foodoo[4], obj_foodoo_dict['Perjantai']  , 'Foodoo Reilu')
-
-    treeprint(pvm_garden[0], obj_garden_dict['Maanantai']  , 'Foodoo Garden')
-    treeprint(pvm_garden[1], obj_garden_dict['Tiistai']    , 'Foodoo Garden')
-    treeprint(pvm_garden[2], obj_garden_dict['Keskiviikko'], 'Foodoo Garden')
-    treeprint(pvm_garden[3], obj_garden_dict['Torstai']    , 'Foodoo Garden')
-    treeprint(pvm_garden[4], obj_garden_dict['Perjantai']  , 'Foodoo Garden')
-
+    treeprint(pvm_mara, obj_mara_dict, 'Ravintola Mara')
+    treeprint(pvm_foodoo, obj_foodoo_dict, 'Foodoo Reilu')
+    treeprint(pvm_garden, obj_garden_dict, 'Foodoo Garden')
 
 parser = argparse.ArgumentParser(description='get Oulu university restaurant menus')
 #parser.add_argument('url', metavar='U', type=str,
