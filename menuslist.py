@@ -50,7 +50,8 @@ class menusList:
         wjdata = requests.get(self.url).json()
 
         keyId = self.getkeyID(wjdata)
-        for x in range(0,5):
+        #for x in range(0,5):
+        for x in range(len(wjdata[0]['menuTypes'][keyId]['menus'][0]['days'])):
             for i in range(0,4):
                 for meals in wjdata[0]['menuTypes'][keyId]['menus'][0]['days'][x]['mealoptions'][i]['menuItems']:
                     mealslist.append(meals['name'])
