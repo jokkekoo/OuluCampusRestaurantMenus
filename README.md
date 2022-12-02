@@ -1,7 +1,5 @@
 # OuluCampusRestaurantMenus &middot; ![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
 
-not working properly, api changed im working on a fix
-
 WIP Small python project for getting Oulu Linnanmaa campus student restaurants menus. English menus coming soon.
 It's currently showing Mara and Foodoo / Garden menus and their main courses. I'm working on adding in the future Oulu University student restaurants menus. Also maybe adding a option for showing dessert and showing the menu in a proper way as its listed on JSON : Lunch 1: Lunch 2: Veg etc.
 
