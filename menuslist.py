@@ -5,13 +5,16 @@ from datetime import datetime
 
 class menusList:
     def __init__(self, url, name):
+        print("LOADING MENUS")
         self.url = url
         self.name = name
+        self.wjdata = requests.get(self.url).json()
 
     def getjsondays(self):
         pvm = []
-        wjdata = requests.get(self.url).json()
-        for date in wjdata[0]['menuTypes'][5]['menus'][0]['days']:
+        #wjdata = requests.get(self.url).json()
+        keyId = self.getkeyID(self.wjdata)
+        for date in self.wjdata[0]['menuTypes'][keyId]['menus'][0]['days']:
             pvm.append(date['date'])
         pvm = [str(x) for x in pvm]
         for i, date in enumerate(pvm):
@@ -38,22 +41,15 @@ class menusList:
                 return x
 
     def getjsonmenus(self):
-        print('Fetching Data from Jamix API')
-        thisdict = {'Maanantai':[],
-                    'Tiistai':[],
-                    'Keskiviikko':[],
-                    'Torstai':[],
-                    'Perjantai':[]
-                    }
+        thisdict = {}
         mealslist = []
 
-        wjdata = requests.get(self.url).json()
+        #wjdata = requests.get(self.url).json()
 
-        keyId = self.getkeyID(wjdata)
-        #for x in range(0,5):
-        for x in range(len(wjdata[0]['menuTypes'][keyId]['menus'][0]['days'])):
+        keyId = self.getkeyID(self.wjdata)
+        for x in range(len(self.wjdata[0]['menuTypes'][keyId]['menus'][0]['days'])):
             for i in range(0,4):
-                for meals in wjdata[0]['menuTypes'][keyId]['menus'][0]['days'][x]['mealoptions'][i]['menuItems']:
+                for meals in self.wjdata[0]['menuTypes'][keyId]['menus'][0]['days'][x]['mealoptions'][i]['menuItems']:
                     mealslist.append(meals['name'])
                 i += 1
             if x==0:
