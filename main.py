@@ -3,9 +3,6 @@ import argparse
 from argparse import RawTextHelpFormatter
 from treelib import Node, Tree
 
-# Argument parseriin -h niin näyttää vaihtoehdot ravintoloiden nimille
-# -h mara, foodoo, garden
-
 # Printtaus vierekkäin Foodoo | Mara | Garden
 #                             |      |  
 #                             |      | 
