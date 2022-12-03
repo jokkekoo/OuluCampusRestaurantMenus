@@ -64,7 +64,6 @@ mara_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/49?lang
 foodoo_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/48?lang=fi"
 
 def main():
-    # args.name == || args.kaikki=true
     if(args.name == 'mara'):
         printOneMenu(args.name, mara_url)
     elif(args.name == 'foodoo'):
