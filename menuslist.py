@@ -34,7 +34,7 @@ class menusList:
         return sample_dict
 
     def getkeyID(self, json):
-        for i in range(0,10):
+        for i in range(0,14):
             check_for_correct_key = json[0]['menuTypes'][i]['menuTypeName']
             if(check_for_correct_key == self.name):
                 x = i

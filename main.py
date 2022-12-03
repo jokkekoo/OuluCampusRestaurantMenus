@@ -1,5 +1,6 @@
 from menuslist import menusList
 import argparse
+from argparse import RawTextHelpFormatter
 from treelib import Node, Tree
 
 # Argument parseriin -h niin näyttää vaihtoehdot ravintoloiden nimille
@@ -9,6 +10,26 @@ from treelib import Node, Tree
 #                             |      |  
 #                             |      | 
 #                             |      |
+
+parser = argparse.ArgumentParser(formatter_class=RawTextHelpFormatter,description='get Oulu university restaurant menus')
+#parser.add_argument('url', metavar='U', type=str,
+#                    help='an integer for the accumulator')
+#'Name of the restaurant in lower case e.g. mara. -h for help'
+parser.add_argument('name',
+                    help='mara | foodoo | garden | medisiina | pekuri')
+args = parser.parse_args()
+#restaurant = args.name
+
+mara_url_en = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/49?lang=en" 
+foodooreilu_url_en = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/48?lang=en"
+
+mara_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/49?lang=fi"
+foodoo_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/48?lang=fi"
+
+pekuri_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/95663/11?lang=fi"
+#preludi_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/95663/8?lang=fi"
+medisiina_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/95663/4?lang=fi"
+
 
 def treeprint(pvm, dictionary, rname):
     tree = Tree()
@@ -42,21 +63,6 @@ def printAllMenus(lang):
     treeprint(pvm_foodoo, obj_foodoo_dict, 'Foodoo Reilu')
     treeprint(pvm_garden, obj_garden_dict, 'Foodoo Garden')
 
-parser = argparse.ArgumentParser(description='get Oulu university restaurant menus')
-#parser.add_argument('url', metavar='U', type=str,
-#                    help='an integer for the accumulator')
-
-parser.add_argument('name',
-                    help='restaurants name = "restaurant mara" or "mara"')
-args = parser.parse_args()
-#restaurant = args.name
-
-mara_url_en = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/49?lang=en" 
-foodooreilu_url_en = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/48?lang=en"
-
-mara_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/49?lang=fi"
-foodoo_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/48?lang=fi"
-
 def main():
     if(args.name == 'mara'):
         args.name = 'Ravintola Mara'
@@ -67,8 +73,15 @@ def main():
     elif(args.name == 'garden'):
         args.name = 'Foodoo Garden'
         printOneMenu(args.name, foodoo_url)
+    elif(args.name == 'pekuri'):
+        args.name = 'Ruokalista'
+        printOneMenu(args.name, pekuri_url)
+    elif(args.name == 'medisiina'):
+        args.name = 'Ruokalista'
+        printOneMenu(args.name, medisiina_url)
 
     if(args.name == 'all'):
         printAllMenus('fi')
+
 if __name__ == '__main__':
     main()
