@@ -16,7 +16,7 @@ parser = argparse.ArgumentParser(formatter_class=RawTextHelpFormatter,descriptio
 #                    help='an integer for the accumulator')
 #'Name of the restaurant in lower case e.g. mara. -h for help'
 parser.add_argument('name',
-                    help='mara | foodoo | garden | medisiina | pekuri')
+                    help='mara | foodoo | garden | medisiina | pekuri | kastari')
 args = parser.parse_args()
 #restaurant = args.name
 
@@ -29,7 +29,7 @@ foodoo_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/48?la
 pekuri_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/95663/11?lang=fi"
 #preludi_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/95663/8?lang=fi"
 medisiina_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/95663/4?lang=fi"
-
+kastari_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/95663/5?lang=fi"
 
 def treeprint(pvm, dictionary, rname):
     tree = Tree()
@@ -79,6 +79,9 @@ def main():
     elif(args.name == 'medisiina'):
         args.name = 'Ruokalista'
         printOneMenu(args.name, medisiina_url)
+    elif(args.name == 'kastari'):
+        args.name = 'Ruokalista'
+        printOneMenu(args.name, kastari_url)
 
     if(args.name == 'all'):
         printAllMenus('fi')

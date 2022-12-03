@@ -43,12 +43,10 @@ class menusList:
     def getjsonmenus(self):
         thisdict = {}
         mealslist = []
-
-        #wjdata = requests.get(self.url).json()
-
+        #for i in range(0,4):
         keyId = self.getkeyID(self.wjdata)
         for x in range(len(self.wjdata[0]['menuTypes'][keyId]['menus'][0]['days'])):
-            for i in range(0,4):
+            for i in range(len(self.wjdata[0]['menuTypes'][keyId]['menus'][0]['days'][x]['mealoptions'])):
                 for meals in self.wjdata[0]['menuTypes'][keyId]['menus'][0]['days'][x]['mealoptions'][i]['menuItems']:
                     mealslist.append(meals['name'])
                 i += 1
