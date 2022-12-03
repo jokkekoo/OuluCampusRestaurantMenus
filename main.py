@@ -20,12 +20,6 @@ def treeprint(pvm, dictionary, rname):
     tree.show()
 
 def printOneMenu(rname, url):
-    if(rname == 'garden'):
-        rname = 'Foodoo Garden'
-    elif(rname == 'foodoo'):
-        rname = 'Foodoo Reilu'
-    elif(rname == 'mara'):
-        rname = 'Ravintola Mara'
     obj = menusList(url, rname)
     pvm = obj.getjsondays()
     obj_dict = obj.getjsonmenus()
@@ -65,10 +59,13 @@ foodoo_url = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/48?la
 
 def main():
     if(args.name == 'mara'):
+        args.name = 'Ravintola Mara'
         printOneMenu(args.name, mara_url)
     elif(args.name == 'foodoo'):
+        args.name = 'Foodoo Reilu'
         printOneMenu(args.name, foodoo_url)
     elif(args.name == 'garden'):
+        args.name = 'Foodoo Garden'
         printOneMenu(args.name, foodoo_url)
 
     if(args.name == 'all'):
