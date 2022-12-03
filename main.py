@@ -16,7 +16,7 @@ parser = argparse.ArgumentParser(formatter_class=RawTextHelpFormatter,descriptio
 #                    help='an integer for the accumulator')
 #'Name of the restaurant in lower case e.g. mara. -h for help'
 parser.add_argument('name',
-                    help='mara | foodoo | garden | medisiina | pekuri | kastari')
+                    help='mara | foodoo | garden | medisiina | pekuri | kastari | napa | foodoosaladsoup | cafehub | herkku')
 args = parser.parse_args()
 #restaurant = args.name
 
@@ -82,6 +82,18 @@ def main():
     elif(args.name == 'kastari'):
         args.name = 'Ruokalista'
         printOneMenu(args.name, kastari_url)
+    elif(args.name == 'napa'):
+        args.name = 'Napa Rohee'
+        printOneMenu(args.name, foodoo_url)
+    elif(args.name == 'foodoosaladsoup'):
+        args.name = 'Foodoo Salad and soup'
+        printOneMenu(args.name, foodoo_url)
+    elif(args.name == 'cafehub'):
+         args.name = 'Cafe Hub Salad and soup'
+         printOneMenu(args.name, foodoo_url)
+    elif(args.name == 'herkku'):
+         args.name = 'Foodoo Herkku'
+         printOneMenu(args.name, foodoo_url)
 
     if(args.name == 'all'):
         printAllMenus('fi')
