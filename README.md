@@ -33,10 +33,11 @@ pip install -r requirements.txt
 Test it out
 
 It needs restaurants name as argument
+-h to see available restaurants
 ```shell
 python3 main.py -h
 ```
-Pass argument -h to see restaurant names
+Give restaurants name
 ```shell
 python3 main.py mara
 ```
