@@ -61,36 +61,39 @@ def printAllMenus(lang):
     treeprint(pvm_garden, obj_garden_dict, 'Foodoo Garden')
 
 def main():
-    if(args.name == 'mara'):
-        args.name = 'Ravintola Mara'
-        printOneMenu(args.name, mara_url)
-    elif(args.name == 'foodoo'):
-        args.name = 'Foodoo Reilu'
-        printOneMenu(args.name, foodoo_url)
-    elif(args.name == 'garden'):
-        args.name = 'Foodoo Garden'
-        printOneMenu(args.name, foodoo_url)
-    elif(args.name == 'pekuri'):
-        args.name = 'Ruokalista'
-        printOneMenu(args.name, pekuri_url)
-    elif(args.name == 'medisiina'):
-        args.name = 'Ruokalista'
-        printOneMenu(args.name, medisiina_url)
-    elif(args.name == 'kastari'):
-        args.name = 'Ruokalista'
-        printOneMenu(args.name, kastari_url)
-    elif(args.name == 'napa'):
-        args.name = 'Napa Rohee'
-        printOneMenu(args.name, foodoo_url)
-    elif(args.name == 'foodoosaladsoup'):
-        args.name = 'Foodoo Salad and soup'
-        printOneMenu(args.name, foodoo_url)
-    elif(args.name == 'cafehub'):
-         args.name = 'Cafe Hub Salad and soup'
-         printOneMenu(args.name, foodoo_url)
-    elif(args.name == 'herkku'):
-         args.name = 'Foodoo Herkku'
-         printOneMenu(args.name, foodoo_url)
+    try:
+        if(args.name == 'mara'):
+            args.name = 'Ravintola Mara'
+            printOneMenu(args.name, mara_url)
+        elif(args.name == 'foodoo'):
+            args.name = 'Foodoo Reilu'
+            printOneMenu(args.name, foodoo_url)
+        elif(args.name == 'garden'):
+            args.name = 'Foodoo Garden'
+            printOneMenu(args.name, foodoo_url)
+        elif(args.name == 'pekuri'):
+            args.name = 'Ruokalista'
+            printOneMenu(args.name, pekuri_url)
+        elif(args.name == 'medisiina'):
+            args.name = 'Ruokalista'
+            printOneMenu(args.name, medisiina_url)
+        elif(args.name == 'kastari'):
+            args.name = 'Ruokalista'
+            printOneMenu(args.name, kastari_url)
+        elif(args.name == 'napa'):
+            args.name = 'Napa Rohee'
+            printOneMenu(args.name, foodoo_url)
+        elif(args.name == 'foodoosaladsoup'):
+            args.name = 'Foodoo Salad and soup'
+            printOneMenu(args.name, foodoo_url)
+        elif(args.name == 'cafehub'):
+             args.name = 'Cafe Hub Salad and soup'
+             printOneMenu(args.name, foodoo_url)
+        elif(args.name == 'herkku'):
+             args.name = 'Foodoo Herkku'
+             printOneMenu(args.name, foodoo_url)
+    except:
+        print('Can\'t load menu, possibly because api has an error or menuslist.py is broken')
 
     if(args.name == 'all'):
         printAllMenus('fi')
