@@ -39,5 +39,5 @@ python3 main.py -h
 ```
 Give restaurants name
 ```shell
-python3 main.py mara
+python3 main.py foodoo
 ```
