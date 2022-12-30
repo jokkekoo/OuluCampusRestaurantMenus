@@ -43,22 +43,8 @@ def printOneMenu(rname, url):
     obj_dict = obj.getjsonmenus()
     treeprint(pvm, obj_dict, rname)
 
-def printAllMenus(lang):
-    obj_mara = menusList("https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/49?lang=" + lang, 'Ravintola Mara')
-    obj_foodoo =  menusList("https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/48?lang=" + lang, 'Foodoo Reilu')
-    obj_garden = menusList("https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/48?lang=" + lang, 'Foodoo Garden')
-
-    pvm_mara = obj_mara.getjsondays()
-    pvm_foodoo = obj_foodoo.getjsondays()
-    pvm_garden = obj_garden.getjsondays()
-
-    obj_mara_dict = obj_mara.getjsonmenus()
-    obj_foodoo_dict = obj_foodoo.getjsonmenus()
-    obj_garden_dict = obj_garden.getjsonmenus()
-
-    treeprint(pvm_mara, obj_mara_dict, 'Ravintola Mara')
-    treeprint(pvm_foodoo, obj_foodoo_dict, 'Foodoo Reilu')
-    treeprint(pvm_garden, obj_garden_dict, 'Foodoo Garden')
+#def printAllMenus(lang):
+# need to find out a way to make the print to terminal smaller so i can fit everything :D
 
 def main():
     try:
@@ -92,11 +78,11 @@ def main():
         elif(args.name == 'herkku'):
              args.name = 'Foodoo Herkku'
              printOneMenu(args.name, foodoo_url)
-    except:
+    except IndexError:
         print('Can\'t load menu, possibly because api has an error or menuslist.py is broken')
 
-    if(args.name == 'all'):
-        printAllMenus('fi')
+    #if(args.name == 'all'):
+    #    printAllMenus('fi')
 
 if __name__ == '__main__':
     main()
